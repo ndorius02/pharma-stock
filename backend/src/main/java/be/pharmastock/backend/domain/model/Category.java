@@ -1,4 +1,4 @@
-package be.pharmastock.backend.domain.entity;
+package be.pharmastock.backend.domain.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -38,7 +38,7 @@ public class Category {
 
     @Column(name = "updated_at", nullable = false)
     private OffsetDateTime updatedAt;
-
+/*
     @PrePersist
     void onCreate() {
         OffsetDateTime now = OffsetDateTime.now();
@@ -50,6 +50,9 @@ public class Category {
     void onUpdate() {
         this.updatedAt = OffsetDateTime.now();
     }
+
+ */
+
 }
 
 /*
