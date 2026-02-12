@@ -32,7 +32,6 @@ The goal of this project is to demonstrate clean architecture, business rule imp
 - Postman (API testing)
 
 ---
-
 ## 🔐 Authentication & Roles
 
 JWT-based authentication with Role-Based Access Control (RBAC):
