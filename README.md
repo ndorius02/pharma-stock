@@ -1,11 +1,8 @@
 # 💊 Pharmacy Stock Management System (V1)
-
 A full-stack pharmacy stock management system developed as a personal portfolio project after completing my Bachelor's degree in Computer Science (Application Development).
-
 The goal of this project is to demonstrate clean architecture, business rule implementation, security best practices, testing strategies, and DevOps integration in a real-world scenario.
 ---
 ## 🚀 Tech Stack
-
 ### Backend
 - Java 17
 - Spring Boot
@@ -14,35 +11,27 @@ The goal of this project is to demonstrate clean architecture, business rule imp
 - PostgreSQL
 - Flyway
 - Spring Validation
-
 ### Frontend
 - Angular
 - Angular Material
 - RxJS
-
 ### Testing
 - JUnit 5
 - Mockito
 - Testcontainers (PostgreSQL integration testing)
-
 ### DevOps & Tools
 - Docker & Docker Compose
 - Git & GitHub
 - GitHub Actions (CI/CD ready)
 - Postman (API testing)
-
 ---
 ## 🔐 Authentication & Roles
-
 JWT-based authentication with Role-Based Access Control (RBAC):
-
 - **ADMIN**
   - Full access
   - Manage users
-
 - **MANAGER**
   - Full access (except user management)
-
 - **STAFF**
   - Read-only access
   - Manage stock movements
@@ -78,7 +67,6 @@ JWT-based authentication with Role-Based Access Control (RBAC):
 - Low stock overview
 - Top 5 most sold medications (last 30 days)
 - IN vs OUT movement chart
-
 ---
 ## 🗄 Database Model
 V1 includes 8 main tables:
@@ -93,10 +81,9 @@ V1 includes 8 main tables:
 Designed to be extensible for future versions.
 ---
 ## 🐳 Running with Docker
-
 ### Prerequisites
 - Docker & Docker Compose
-- Java 17+
+- Java 21
 - Node.js (LTS)
 ### Start the application
 ```bash
