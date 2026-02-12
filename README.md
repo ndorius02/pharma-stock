@@ -5,7 +5,7 @@ The goal of this project is to demonstrate clean architecture, business rule imp
 ---
 ## 🚀 Tech Stack
 ### Backend
-- Java 17
+- Java 21
 - Spring Boot
 - Spring Security (JWT)
 - Spring Data JPA
