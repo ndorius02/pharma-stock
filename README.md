@@ -47,27 +47,21 @@ JWT-based authentication with Role-Based Access Control (RBAC):
   - Read-only access
   - Manage stock movements
   - View alerts
-
 ---
-
 ## 📦 Main Features (V1)
-
 ### User Management
 - Secure login (JWT)
 - Role-based access control
 - User activation/deactivation
-
 ### Medication Management
 - CRUD operations
 - Categories & internal locations
 - Soft delete
 - Pagination, filtering & sorting
-
 ### Suppliers & Customers
 - CRUD operations
 - Locality filtering
 - Pagination & search
-
 ### Stock Management
 - Stock movements:
   - IN (purchase)
@@ -77,10 +71,8 @@ JWT-based authentication with Role-Based Access Control (RBAC):
   - Stock cannot go below zero
   - Automatic stock update
   - Full traceability
-
 ### Stock Alerts
 - Automatic detection of low-stock medications
-
 ### Dashboard
 - Total medications
 - Low stock overview
@@ -88,7 +80,6 @@ JWT-based authentication with Role-Based Access Control (RBAC):
 - IN vs OUT movement chart
 
 ---
-
 ## 🗄 Database Model
 V1 includes 8 main tables:
 - users
