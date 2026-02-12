@@ -1,5 +1,6 @@
 # 💊 Pharmacy Stock Management System (V1)
 A full-stack pharmacy stock management system developed as a personal portfolio project after completing my Bachelor's degree in Computer Science (Application Development).
+
 The goal of this project is to demonstrate clean architecture, business rule implementation, security best practices, testing strategies, and DevOps integration in a real-world scenario.
 ---
 ## 🚀 Tech Stack
