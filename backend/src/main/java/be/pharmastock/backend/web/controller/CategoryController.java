@@ -1,6 +1,6 @@
 package be.pharmastock.backend.web.controller;
 
-import be.pharmastock.backend.domain.entity.Category;
+import be.pharmastock.backend.domain.model.Category;
 import be.pharmastock.backend.service.CategoryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("/api/categories")

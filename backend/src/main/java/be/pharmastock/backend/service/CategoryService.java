@@ -1,6 +1,6 @@
 package be.pharmastock.backend.service;
 
-import be.pharmastock.backend.domain.entity.Category;
+import be.pharmastock.backend.domain.model.Category;
 import be.pharmastock.backend.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
