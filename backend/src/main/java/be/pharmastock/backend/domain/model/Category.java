@@ -1,8 +1,6 @@
-package be.pharmastock.backend.domain.entity;
+package be.pharmastock.backend.domain.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.time.OffsetDateTime;
@@ -21,24 +19,22 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Category name is required")
-    @Size(max = 120, message = "Category name must be <= 120 characters")
-    @Column(nullable = false, length = 120)
+    @Column(nullable = false, length = 150)
     private String name;
 
-    @Size(max = 500, message = "Description must be <= 500 characters")
     @Column(length = 500)
     private String description;
 
     @Column(name = "is_active", nullable = false)
-    private boolean isActive = true;
+    private boolean active = true;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at", nullable = false, insertable = false, updatable = false)
     private OffsetDateTime updatedAt;
 
+/*
     @PrePersist
     void onCreate() {
         OffsetDateTime now = OffsetDateTime.now();
@@ -50,9 +46,7 @@ public class Category {
     void onUpdate() {
         this.updatedAt = OffsetDateTime.now();
     }
-}
+ */
+    // Car DB gère déjà updated_at via trigger
 
-/*
-Si DB gère déjà updated_at via trigger, on pourra enlever @PreUpdate plus tard.
-Pour l’instant ça marche très bien en dev.
-*/
+}
