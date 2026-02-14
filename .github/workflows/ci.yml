@@ -34,6 +34,10 @@ jobs:
           java-version: 21
           cache: maven
 
+      - name: Make mvnw executable
+        working-directory: backend
+        run: chmod +x mvnw
+
       - name: Run tests (backend)
         working-directory: backend
         env:
@@ -41,3 +45,4 @@ jobs:
           SPRING_DATASOURCE_USERNAME: pharmastock_user
           SPRING_DATASOURCE_PASSWORD: pharmastock_pass
         run: ./mvnw -q clean test
+
