@@ -1,4 +1,4 @@
-package be.pharmastock.backend.web.dto;
+package be.pharmastock.backend.web.dto.category;
 
 import java.time.OffsetDateTime;
 
