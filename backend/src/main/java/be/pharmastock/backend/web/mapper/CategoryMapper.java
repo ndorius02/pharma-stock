@@ -1,9 +1,9 @@
 package be.pharmastock.backend.web.mapper;
 
 import be.pharmastock.backend.domain.model.Category;
-import be.pharmastock.backend.web.dto.CategoryCreateRequest;
-import be.pharmastock.backend.web.dto.CategoryResponse;
-import be.pharmastock.backend.web.dto.CategoryUpdateRequest;
+import be.pharmastock.backend.web.dto.category.CategoryCreateRequest;
+import be.pharmastock.backend.web.dto.category.CategoryResponse;
+import be.pharmastock.backend.web.dto.category.CategoryUpdateRequest;
 
 public final class CategoryMapper {
     private CategoryMapper() {}
