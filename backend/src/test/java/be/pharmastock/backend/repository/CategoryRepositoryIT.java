@@ -3,7 +3,8 @@ package be.pharmastock.backend.repository;
 import be.pharmastock.backend.domain.model.Category;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
@@ -14,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
 @DataJpaTest
-
+// @Import(FlywayAutoConfiguration.class)
 public class CategoryRepositoryIT {
     @Container
     static PostgreSQLContainer<?> postgres =
