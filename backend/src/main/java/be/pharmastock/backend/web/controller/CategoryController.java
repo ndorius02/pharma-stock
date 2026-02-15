@@ -2,6 +2,10 @@ package be.pharmastock.backend.web.controller;
 
 import be.pharmastock.backend.domain.model.Category;
 import be.pharmastock.backend.service.CategoryService;
+import be.pharmastock.backend.web.dto.CategoryCreateRequest;
+import be.pharmastock.backend.web.dto.CategoryResponse;
+import be.pharmastock.backend.web.dto.CategoryUpdateRequest;
+import be.pharmastock.backend.web.mapper.CategoryMapper;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -19,23 +23,34 @@ public class CategoryController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Category create(@Valid @RequestBody Category category) {
-        return categoryService.create(category);
+    public CategoryResponse create(@Valid @RequestBody CategoryCreateRequest request) {
+        Category entity = CategoryMapper.toEntity(request);
+        Category created = categoryService.create(entity);
+        return CategoryMapper.toResponse(created);
     }
 
     @GetMapping
-    public Page<Category> list(@PageableDefault(size = 10) Pageable pageable) {
-        return categoryService.listActive(pageable);
+    public Page<CategoryResponse> list(@PageableDefault(size = 10) Pageable pageable) {
+        return categoryService.listActive(pageable)
+                .map(CategoryMapper::toResponse);
     }
 
     @GetMapping("/{id}")
-    public Category get(@PathVariable Long id) {
-        return categoryService.getActive(id);
+    public CategoryResponse get(@PathVariable Long id) {
+        return CategoryMapper.toResponse(categoryService.getActive(id));
     }
 
     @PutMapping("/{id}")
-    public Category update(@PathVariable Long id, @Valid @RequestBody Category category) {
-        return categoryService.update(id, category);
+    public CategoryResponse update(@PathVariable Long id,
+                                   @Valid @RequestBody CategoryUpdateRequest request) {
+
+        // On crée un "input entity" minimal pour réutiliser le service actuel
+        Category input = new Category();
+        input.setName(request.name());
+        input.setDescription(request.description());
+
+        Category updated = categoryService.update(id, input);
+        return CategoryMapper.toResponse(updated);
     }
 
     @DeleteMapping("/{id}")
