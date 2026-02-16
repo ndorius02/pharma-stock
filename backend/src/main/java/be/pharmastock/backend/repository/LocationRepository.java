@@ -1,5 +1,6 @@
 package be.pharmastock.backend.repository;
 
+import be.pharmastock.backend.domain.model.Category;
 import be.pharmastock.backend.domain.model.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.domain.Page;
@@ -11,6 +12,7 @@ import java.util.Optional;
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
     Optional<Location> findByNameIgnoreCase(String name);
-    List<Location> findAllByActiveTrue(Pageable pageable);
+    Page<Location> findAllByActiveTrue(Pageable pageable);
     boolean existsByNameIgnoreCaseAndActiveTrue(String name);
+    Optional<Location> findByIdAndActiveTrue(Long id);
 }
