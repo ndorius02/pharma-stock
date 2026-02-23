@@ -71,14 +71,14 @@ JWT-based authentication with Role-Based Access Control (RBAC):
 ---
 ## 🗄 Database Model
 V1 includes 8 main tables:
-- users
-- customers
-- suppliers
-- categories
-- locations
-- medications
-- medication_suppliers
-- stock_movements
+- user
+- customer
+- supplier
+- categorie
+- location
+- medication
+- medication_supplier
+- stock_movement
 Designed to be extensible for future versions.
 ---
 ## 🐳 Running with Docker
